@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SlideShow JS</title>
+    <style>
+        img {
+            width: auto;
+            height: 80vh;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+<body>
+    <img name="slide">
+    <script>
+        var i = 0;
+        //var photos = ["images/img1.jpg", "images/img2.jpg", "images/img3.jpg", "images/img4.jpg", "images/img5.jpg", "images/img6.jpg", "images/img7.jpg", "images/img8.jpg"];
+        var photos = [];
+        for (i = 0 ; i < 100; i++){
+            photos.push("img" +i+ ".jpg");
+            console.log(photos);
+        }
+        var time = 2000;
+
+        function changeImg(){
+            document.slide.src= photos[i];
+            if(i < photos.length - 1){
+                i++;
+            } else {
+                i=0;
+            }
+            setTimeout("changeImg()", time);
+        }
+        window.onload = changeImg;
+
+    </script>
+</body>
+</html>

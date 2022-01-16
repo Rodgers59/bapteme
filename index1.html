@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Album Photos Bapteme Matti></title>
+        <meta http-equiv="content-type" content="text/html" />
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="style.css" >
+        <meta name="viewport" content="width=device-width" />
+    </head>
+<body>
+    <div id="container">
+        <div id="photo" class="img"></div>
+        <!--<div id="reflet" class="img"></div>
+            <div></div>-->
+    </div>
+    <script>
+        /*document.body.onload= function() {
+            i=1;
+            ang=0;
+            setInterval("album()",20);
+        }
+        function album(){
+            document.getElementById("container").style.transform="perspective(1000px) rotateY("+ang+"deg)";
+            ang++;
+            if(ang>=360) ang=0;
+            if(ang==90 || ang==270){
+                i+=1;
+                if(i>40) i=1;
+                document.getElementById("photo").style.backgroundImage="url('img"+i+".jpg')";
+                //document.getElementById("reflet").style.backgroundImage="url('img"+i+".jpg')";
+            }
+        }
+        var preloaded = 0;
+var images = new Array(
+    "img1.jpg", "img2.jpg", "img3.jpg",
+    "img4.jpg", "img5.jpg", "img6.jpg",
+    "img7.jpg", "img8.jpg", "img9.jpg",
+    "img10.jpg", "img11.jpg", "img12.jpg",
+    "img13.jpg", "img14.jpg", "img15.jpg",
+    "img16.jpg", "img17.jpg", "img18.jpg",
+    "img19.jpg", "img20.jpg", "img21.jpg",
+    "img22.jpg", "img23.jpg", "img24.jpg",
+    "img25.jpg", "img26.jpg", "img27.jpg",
+    "img28.jpg", "img29.jpg", "img30.jpg",
+    "img31.jpg", "img32.jpg", "img33.jpg",
+    "img34.jpg", "img35.jpg", "img36.jpg",
+    "img37.jpg", "img38.jpg", "img39.jpg", "img40.jpg");
+                
+function preLoader(e) {
+    for (var i = 0; i < images.length; i++) {
+        var tempImage = new Image();
+         
+        tempImage.addEventListener("load", progress, true);
+        tempImage.src = images[i];
+    }
+}
+ 
+function progress() {
+    preloaded++;
+     
+    if (preloaded == images.length) {
+        //ALL Images have been loaded, perform the desired action
+    }
+}
+//this.addEventListener("DOMContentLoaded", preLoader, true);
+window.addEventListener("DOMContentLoaded", function() {
+            console.log("Le document est chargé complétement");
+            i=1;
+            ang=0;
+            setInterval("album()",20);
+        });
+    </script>
+</body>
+</html>
+
+
+

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+        <script type="text/javascript" src="jquery-ui-1.12.1.min.js"></script>
+    <title>SlideShow JS</title>
+    <style>
+        body {
+            background-color: chocolate;
+        }
+        img {
+            width: auto;
+            height: 90vh;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            /*border-bottom: 3px solid white;
+            border-right: 3px solid white;
+            border-left: 3px solid black;
+            border-top: 3px solid black;*/
+            background-color: rgba(0, 0, 0, 0.5);
+            /*box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);*/
+            .slider {
+            /*box-shadow: 0 20px 50px -25px rgba(0, 0, 0, 0, 1);*/
+            box-shadow: 2px 2px 10px #333;
+        }
+    </style>
+</head>
+<body>
+    <img id= "picture" name="slide">
+    <script>
+        var i = 1;
+        //var photos = ["images/img1.jpg", "images/img2.jpg", "images/img3.jpg", "images/img4.jpg", "images/img5.jpg", "images/img6.jpg", "images/img7.jpg", "images/img8.jpg"];
+        var photos = [];
+        for (let i = 0 ; i < 114; i++){
+            photos.push("images/img" +i+ ".jpg");
+            console.log(photos);
+        }
+        var time = 4000;
+
+        function changeImg(){
+
+            document.slide.src= photos[i];
+            $("#picture").animate({opacity: 1}, 3000);
+            if(i < photos.length - 1){
+                document.slide.src= photos[i];
+
+                i++;
+            } else {
+                i=1;
+            }
+            setTimeout("changeImg()", time);
+        }
+        window.onload = changeImg;
+
+    </script>
+</body>
+</html>
